@@ -33,6 +33,14 @@ import '@ionic/react/css/palettes/dark.system.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import Login from './pages/Login';
+import CreateAccount from './pages/CreateAccount';
+import MyProfile from './pages/MyProfile';
+import Reports from './pages/Reports';
+import Calendar from './pages/calendar';
+import NewTask from './pages/NewTask';
+import Settings from './pages/Settings';
+import Tasks from './pages/Tasks';
 
 setupIonicReact();
 
@@ -43,6 +51,15 @@ const App: React.FC = () => {
         <IonSplitPane contentId="main">
           <Menu />
           <IonRouterOutlet id="main">
+            <Route path="/login" component={Login}></Route>
+            <Route path="/create-account" component={CreateAccount}></Route>
+            <Route path="/profile" component={MyProfile}></Route>
+            <Route path="/reports" component={Reports}></Route>
+            <Route path="/tasks" component={Tasks}></Route>
+            <Route path="/calendar" component={Calendar}></Route>
+            <Route path="/new-task" component={NewTask}></Route>
+            <Route path="/settings" component={Settings}></Route>
+            <Redirect exact from="/" to="/login" />
             <Route path="/" exact={true}>
               <Redirect to="/folder/Inbox" />
             </Route>
