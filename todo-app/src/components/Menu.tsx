@@ -1,4 +1,5 @@
 import {
+  IonAvatar,
   IonContent,
   IonIcon,
   IonItem,
@@ -13,6 +14,8 @@ import {
 import { useLocation } from 'react-router-dom';
 import { addOutline, calendarOutline, listOutline, logInOutline, personAddOutline, personOutline, settingsOutline, statsChartOutline } from 'ionicons/icons';
 import './Menu.css';
+import { useState } from 'react';
+import jsonData from '../data.json';
 
 interface AppPage {
   url: string;
@@ -34,13 +37,19 @@ const appPages: AppPage[] = [
 
 const Menu: React.FC = () => {
   const location = useLocation();
-
+  const userData = jsonData.users[0];
+  
   return (
     <IonMenu contentId="main" type="overlay">
       <IonContent>
         <IonList id="menu-list">
-          <IonListHeader>App Navigation</IonListHeader>
-          <IonNote>example@yourdomain.com</IonNote>
+          <IonListHeader>
+            <IonAvatar>
+              <img src={userData?.picture} alt="User Avatar" />
+            </IonAvatar>
+            <div>{userData?.username || 'Loading...'}</div>
+          </IonListHeader>
+          <IonNote>{userData?.email || 'Loading...'}</IonNote>
           {appPages.map((appPage, index) => (
             <IonMenuToggle key={index} autoHide={false}>
               <IonItem

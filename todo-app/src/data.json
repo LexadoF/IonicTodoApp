@@ -1,0 +1,29 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "username": "Jhoana Doe",
+        "email": "johana@company.com",
+        "password": "password123",
+        "picture": "https://picsum.photos/200"
+      }
+    ],
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Complete project",
+        "description": "Finish the Ionic project",
+        "due_date": "2024-11-20",
+        "priority": "High",
+        "notify": true,
+        "user_id": 1,
+        "completed": false
+      }
+    ],
+    "settings": {
+      "allow_notifications": true,
+      "notification_type": "Silent",
+      "sync_between_devices": false
+    }
+  }
+  
