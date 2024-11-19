@@ -1,5 +1,5 @@
 import React from 'react';
-import { IonPage, IonHeader, IonToolbar, IonContent, IonInput, IonButton, IonText } from '@ionic/react';
+import { IonPage, IonContent, IonInput, IonButton, IonText } from '@ionic/react';
 import './login.css';
 
 const Login: React.FC = () => (
