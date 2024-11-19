@@ -2,19 +2,29 @@ import React, { useState, useEffect } from 'react';
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonMenuButton, IonButton } from '@ionic/react';
 import './Calendar.css';
 import jsonData from '../data.json';
+import { useHistory } from 'react-router';
 
 const Calendar: React.FC = () => {
   const [tasksByDate, setTasksByDate] = useState<Record<string, string[]>>({});
-  const [currentDate, setCurrentDate] = useState(new Date()); // Tracks the current month and year
+  const [currentDate, setCurrentDate] = useState(new Date());
+
+  const history = useHistory();
+
+  const handleNewTask = () => {
+    history.push('/new-task');
+  };
+  const handleList = () => {
+    history.push('/tasks');
+  };
 
   useEffect(() => {
-    // Organize tasks by date
+
     const tasksGrouped: Record<string, string[]> = {};
     jsonData.tasks.forEach((task) => {
       if (!tasksGrouped[task.due_date]) {
         tasksGrouped[task.due_date] = [];
       }
-      tasksGrouped[task.due_date].push(task.title); // Group tasks by their due_date
+      tasksGrouped[task.due_date].push(task.title);
     });
     setTasksByDate(tasksGrouped);
   }, []);
@@ -22,9 +32,9 @@ const Calendar: React.FC = () => {
   const handleMonthChange = (direction: 'prev' | 'next') => {
     const newDate = new Date(currentDate);
     if (direction === 'prev') {
-      newDate.setMonth(newDate.getMonth() - 1); // Go to the previous month
+      newDate.setMonth(newDate.getMonth() - 1);
     } else {
-      newDate.setMonth(newDate.getMonth() + 1); // Go to the next month
+      newDate.setMonth(newDate.getMonth() + 1);
     }
     setCurrentDate(newDate);
   };
@@ -32,10 +42,10 @@ const Calendar: React.FC = () => {
   const renderCalendar = () => {
     const year = currentDate.getFullYear();
     const month = currentDate.getMonth();
-    const daysInMonth = new Date(year, month + 1, 0).getDate(); // Number of days in the current month
-    const firstDayOfMonth = new Date(year, month, 1).getDay(); // Day of the week the month starts
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+    const firstDayOfMonth = new Date(year, month, 1).getDay();
 
-    // Generate an array to represent the calendar grid
+
     const calendarDays = Array.from({ length: daysInMonth + firstDayOfMonth }, (_, index) => {
       const dayNumber = index - firstDayOfMonth + 1;
       const date = new Date(year, month, dayNumber);
@@ -68,15 +78,21 @@ const Calendar: React.FC = () => {
           <IonButtons slot="start">
             <IonMenuButton />
           </IonButtons>
-          <IonTitle>Calendar</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
+
         <div className="page-wrapper">
+          <h1>Calendario</h1>
+
+          <div className="container-buttons">
+            <IonButton expand="block" onClick={handleList} className="view-calendar-button btn_primary_custom reduced_width_btn">Lista de tareas</IonButton>
+            <IonButton expand="block" onClick={handleNewTask} className="new-task-button btn_primary_custom reduced_width_btn">Nueva tarea</IonButton>
+          </div>
           <div className="calendar-header">
-            <IonButton onClick={() => handleMonthChange('prev')}>Previous</IonButton>
+            <IonButton onClick={() => handleMonthChange('prev')}>{'<'}</IonButton>
             <h2>{currentDate.toLocaleString('default', { month: 'long', year: 'numeric' })}</h2>
-            <IonButton onClick={() => handleMonthChange('next')}>Next</IonButton>
+            <IonButton onClick={() => handleMonthChange('next')}>{'>'}</IonButton>
           </div>
           <div className="calendar-container">
             <div className="calendar-grid">{renderCalendar()}</div>
