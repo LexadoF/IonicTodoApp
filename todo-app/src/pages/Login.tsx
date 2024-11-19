@@ -5,7 +5,7 @@ import './login.css';
 const Login: React.FC = () => (
   <IonPage>
     <IonContent className="login-container">
-      <div className="login-wrapper">
+      <div className="page-wrapper">
         <div className="login-form">
         <img src="assets/cloud.png" alt="Cloud"className="cloud-image" />
           <h2>Inicio de sesión</h2>

@@ -7,7 +7,7 @@
     background-color: #f9f9f9;
 }
 
-.login-wrapper {
+/* .page-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,7 +17,7 @@
     height: 100%;
     padding: 20px;
     background-color: white;
-}
+} */
 
 .login-form {
     width: 100%;
