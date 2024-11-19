@@ -20,7 +20,7 @@ const Login: React.FC = () => (
             {/* <IonButton fill="clear" className="eye-button">👁️</IonButton> */}
           </div>
 
-          <IonButton expand="block" className="login-button ">Iniciar Sesión</IonButton>
+          <IonButton expand="block" className="login-button btn_primary_custom">Iniciar Sesión</IonButton>
 
           <IonText color="medium">
             <p className="register-link"><span>Regístrese</span></p>

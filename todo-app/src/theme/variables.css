@@ -12,3 +12,10 @@ http://ionicframework.com/docs/theming/ */
     padding: 20px;
     background-color: white;
 }
+
+.btn_primary_custom {
+    --background: #ff5a5f;
+    --background-hover: darkorange;
+    --background-activated: darkorange;
+    color: white;
+}

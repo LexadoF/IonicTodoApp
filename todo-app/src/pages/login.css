@@ -7,18 +7,6 @@
     background-color: #f9f9f9;
 }
 
-/* .page-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    width: 100%;
-    height: 100%;
-    padding: 20px;
-    background-color: white;
-} */
-
 .login-form {
     width: 100%;
     background: #fff;
@@ -64,13 +52,6 @@ label {
     transform: translateY(-50%);
     font-size: 18px;
     color: #999;
-}
-
-.login-button {
-    --background: #ff5a5f;
-    --background-hover: darkorange;
-    --background-activated: darkorange;
-    color: white;
 }
 
 .register-link {
