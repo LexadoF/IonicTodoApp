@@ -12,9 +12,8 @@ import {
 } from '@ionic/react';
 
 import { useLocation } from 'react-router-dom';
-import { addOutline, calendarOutline, listOutline, logInOutline, personAddOutline, personOutline, settingsOutline, statsChartOutline } from 'ionicons/icons';
+import { addOutline, calendarOutline, listOutline, personOutline, settingsOutline, statsChartOutline } from 'ionicons/icons';
 import './Menu.css';
-import { useState } from 'react';
 import jsonData from '../data.json';
 
 interface AppPage {
