@@ -1,7 +1,7 @@
 import React from 'react';
 import { IonPage, IonContent, IonInput, IonButton, IonText, IonCheckbox } from '@ionic/react';
-import './createAccount.css';
 import { useHistory } from 'react-router';
+import './createAccount.css';
 
 const CreateAccount: React.FC = () => {
     const history = useHistory();

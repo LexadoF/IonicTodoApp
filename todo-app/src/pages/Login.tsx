@@ -1,7 +1,7 @@
 import React from 'react';
 import { IonPage, IonContent, IonInput, IonButton, IonText } from '@ionic/react';
-import './login.css';
 import { useHistory } from 'react-router';
+import './login.css';
 
 const Login: React.FC = () => {
   const history = useHistory();

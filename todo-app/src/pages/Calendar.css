@@ -1,0 +1,101 @@
+/* General page wrapper */
+.page-wrapper {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+  
+/* Header for month navigation */
+.calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 16px;
+}
+  
+.calendar-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    text-align: center;
+}
+  
+/* Center calendar and prevent overflow */
+.calendar-container {
+    display: flex;
+    justify-content: center;
+    overflow-y: auto; /* Allow vertical scrolling */
+    max-height: calc(100vh - 200px); /* Account for header and footer space */
+    width: 100%;
+}
+  
+/* Grid for calendar layout */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 columns for days of the week */
+    gap: 8px;
+    max-width: 500px;
+    width: 100%;
+}
+  
+/* Styling for individual days */
+.calendar-day {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    text-align: center;
+    height: 100px; /* Fixed height for each cell */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden; /* Prevent content from overflowing */
+    position: relative;
+}
+  
+.calendar-day.empty-day {
+    background-color: transparent;
+    border: none;
+}
+  
+/* Scrollable task area */
+.day-tasks {
+    flex-grow: 1;
+    overflow-y: auto; /* Enable scrolling for task overflow */
+    padding: 4px;
+}
+
+/* Highlight today's date */
+.day-header.today {
+    background-color: #4caf50;
+    color: white;
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 4px;
+}
+
+/* Task items in each day */
+.task-item {
+    background-color: #e3f2fd;
+    padding: 4px;
+    margin: 4px 0;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+/* Scrollable area for smaller screens */
+@media screen and (max-width: 768px) {
+    .calendar-grid {
+        gap: 4px;
+    }
+  
+    .calendar-day {
+        height: 80px;
+    }
+  
+    .calendar-header h2 {
+        font-size: 1rem;
+    }
+}

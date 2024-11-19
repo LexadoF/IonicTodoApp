@@ -1,8 +1,8 @@
 import React from 'react';
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonMenuButton, IonCol, IonGrid, IonRow, IonButton } from '@ionic/react';
-import jsonData from '../data.json';
-import './Tasks.css'; // Import the CSS file
 import { useHistory } from 'react-router';
+import jsonData from '../data.json';
+import './Tasks.css';
 
 const Tasks: React.FC = () => {
   const tasks = jsonData.tasks;
