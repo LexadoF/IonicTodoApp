@@ -28,7 +28,6 @@ const appPages: AppPage[] = [
   { title: 'Reports', url: '/reports', iosIcon: statsChartOutline, mdIcon: statsChartOutline },
   { title: 'Tasks', url: '/tasks', iosIcon: listOutline, mdIcon: listOutline },
   { title: 'Calendar', url: '/calendar', iosIcon: calendarOutline, mdIcon: calendarOutline },
-  { title: 'New Task', url: '/new-task', iosIcon: addOutline, mdIcon: addOutline },
   { title: 'Settings', url: '/settings', iosIcon: settingsOutline, mdIcon: settingsOutline },
 ];
 
