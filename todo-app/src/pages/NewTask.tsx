@@ -42,9 +42,9 @@ const NewTask: React.FC = () => {
 
             <label htmlFor="priority">Prioridad</label>
             <IonSelect label="Selecciona una prioridad" placeholder="Prioridad">
-              <IonSelectOption value="high">Alta</IonSelectOption>
-              <IonSelectOption value="medium">Media</IonSelectOption>
-              <IonSelectOption value="low">Baja</IonSelectOption>
+              <IonSelectOption value="High">Alta</IonSelectOption>
+              <IonSelectOption value="Medium">Media</IonSelectOption>
+              <IonSelectOption value="Low">Baja</IonSelectOption>
             </IonSelect>
 
             <IonButton expand="block" onClick={handleSave} className="continue-register-button btn_primary_custom">Guardar</IonButton>

@@ -12,7 +12,7 @@ import {
 } from '@ionic/react';
 
 import { useLocation } from 'react-router-dom';
-import { addOutline, calendarOutline, listOutline, personOutline, settingsOutline, statsChartOutline } from 'ionicons/icons';
+import { calendarOutline, listOutline, personOutline, settingsOutline, statsChartOutline } from 'ionicons/icons';
 import './Menu.css';
 import jsonData from '../data.json';
 
@@ -24,11 +24,11 @@ interface AppPage {
 }
 
 const appPages: AppPage[] = [
-  { title: 'My Profile', url: '/profile', iosIcon: personOutline, mdIcon: personOutline },
-  { title: 'Reports', url: '/reports', iosIcon: statsChartOutline, mdIcon: statsChartOutline },
-  { title: 'Tasks', url: '/tasks', iosIcon: listOutline, mdIcon: listOutline },
-  { title: 'Calendar', url: '/calendar', iosIcon: calendarOutline, mdIcon: calendarOutline },
-  { title: 'Settings', url: '/settings', iosIcon: settingsOutline, mdIcon: settingsOutline },
+  { title: 'Mi perfil', url: '/profile', iosIcon: personOutline, mdIcon: personOutline },
+  { title: 'Reportes', url: '/reports', iosIcon: statsChartOutline, mdIcon: statsChartOutline },
+  { title: 'Tareas', url: '/tasks', iosIcon: listOutline, mdIcon: listOutline },
+  { title: 'Calendario', url: '/calendar', iosIcon: calendarOutline, mdIcon: calendarOutline },
+  { title: 'Ajustes', url: '/settings', iosIcon: settingsOutline, mdIcon: settingsOutline },
 ];
 
 const Menu: React.FC = () => {

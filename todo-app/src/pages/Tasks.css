@@ -1,0 +1,53 @@
+.ion-grid {
+    padding: 0;
+}
+
+.ion-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ion-col {
+    padding: 10px;
+    margin-right: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    word-wrap: break-word;
+}
+
+.table-header {
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.table-row {
+    font-size: 0.8rem;
+}
+
+@media screen and (max-width: 768px) {
+    .ion-col {
+        font-size: 0.8rem;
+    }
+
+    .table-header,
+    .table-row {
+        font-size: 0.7rem;
+    }
+}
+
+.container-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.container-buttons .view-calendar-button {
+    margin-right: 10px;
+}
+
+.container-buttons .new-task-button {
+    margin-left: 10px;
+}

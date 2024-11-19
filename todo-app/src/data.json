@@ -1,29 +1,48 @@
 {
-    "users": [
-      {
-        "id": 1,
-        "username": "Jhoana Doe",
-        "email": "johana@company.com",
-        "password": "password123",
-        "picture": "https://picsum.photos/200"
-      }
-    ],
-    "tasks": [
-      {
-        "id": 1,
-        "title": "Complete project",
-        "description": "Finish the Ionic project",
-        "due_date": "2024-11-20",
-        "priority": "High",
-        "notify": true,
-        "user_id": 1,
-        "completed": false
-      }
-    ],
-    "settings": {
-      "allow_notifications": true,
-      "notification_type": "Silent",
-      "sync_between_devices": false
+  "users": [
+    {
+      "id": 1,
+      "username": "Jhoana Doe",
+      "email": "johana@company.com",
+      "password": "password123",
+      "picture": "https://picsum.photos/200"
     }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Completar proyecto",
+      "description": "Completar el 70% del proyecto",
+      "due_date": "2024-11-19",
+      "priority": "High",
+      "notify": true,
+      "user_id": 1,
+      "completed": true
+    },
+    {
+      "id": 2,
+      "title": "Actualizar documento",
+      "description": "Actualizar el documento de requerimientos",
+      "due_date": "2024-11-20",
+      "priority": "Medium",
+      "notify": true,
+      "user_id": 1,
+      "completed": false
+    },
+    {
+      "id": 3,
+      "title": "Completar la ultima entrega",
+      "description": "Completar el 100% del proyecto",
+      "due_date": "2024-11-20",
+      "priority": "Low",
+      "notify": true,
+      "user_id": 1,
+      "completed": false
+    }
+  ],
+  "settings": {
+    "allow_notifications": true,
+    "notification_type": "Silent",
+    "sync_between_devices": false
   }
-  
+}
