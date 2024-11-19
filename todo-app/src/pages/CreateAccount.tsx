@@ -18,7 +18,7 @@ const CreateAccount: React.FC = () => {
         <IonPage>
             <IonContent className="login-container">
                 <div className="page-wrapper">
-                    <div className="login-form">
+                    <div className="page-form">
                         <h2>Crea tu cuenta</h2>
                         <label htmlFor="email">Correo</label>
                         <IonInput type="email" id="email" placeholder="Ingrese su correo" className="input-field" />

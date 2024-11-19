@@ -17,7 +17,7 @@ const Login: React.FC = () => {
     <IonPage>
       <IonContent className="login-container">
         <div className="page-wrapper">
-          <div className="login-form">
+          <div className="page-form">
             <img src="assets/cloud.png" alt="Cloud" className="cloud-image" />
             <h2>Inicio de sesión</h2>
             <p className="paragraph-sub">Muy buenos días =)</p>

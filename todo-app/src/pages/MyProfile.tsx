@@ -15,7 +15,7 @@ const MyProfile: React.FC = () => {
       </IonHeader>
       <IonContent>
         <div className="page-wrapper">
-          <div className="login-form">
+          <div className="page-form">
             <h2>Mi perfil</h2>
             <IonAvatar>
               <img src={jsonData.users[0].picture} alt="User Avatar" />
