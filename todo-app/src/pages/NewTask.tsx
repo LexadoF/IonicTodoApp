@@ -1,41 +1,50 @@
 import React from 'react';
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonMenuButton, IonButton, IonInput, IonTextarea, IonSelect, IonSelectOption } from '@ionic/react';
+import { useHistory } from 'react-router';
 
-const NewTask: React.FC = () => (
-  <IonPage>
-    <IonHeader>
-      <IonToolbar>
-        <IonButtons slot='start'>
-          <IonMenuButton />
-        </IonButtons >
-        <IonTitle>Nueva tarea</IonTitle>
-      </IonToolbar>
-    </IonHeader>
-    <IonContent>
-      <div className="page-wrapper">
-        <div className="page-form">
-          <h2>Nueva tarea</h2>
-          <label htmlFor="title">Titulo</label>
-          <IonInput type="text" id="title" placeholder="Titulo" className="input-field" />
+const NewTask: React.FC = () => {
+  const history = useHistory();
 
-          <label htmlFor="description">Descripción</label>
-          <IonTextarea id="description" placeholder="Ingrese su correo" className="input-field" />
+  const handleSave = () => {
+    history.push('/tasks');
+};
 
-          <label htmlFor="date">Fecha</label>
-          <IonInput type="date" id="date" placeholder="Ingrese su correo" />
+  return (
+    <IonPage>
+      <IonHeader>
+        <IonToolbar>
+          <IonButtons slot='start'>
+            <IonMenuButton />
+          </IonButtons >
+          <IonTitle>Nueva tarea</IonTitle>
+        </IonToolbar>
+      </IonHeader>
+      <IonContent>
+        <div className="page-wrapper">
+          <div className="page-form">
+            <h2>Nueva tarea</h2>
+            <label htmlFor="title">Titulo</label>
+            <IonInput type="text" id="title" placeholder="Titulo" className="input-field" />
 
-          <label htmlFor="priority">Prioridad</label>
-          <IonSelect label="Selecciona una prioridad" placeholder="Prioridad">
-            <IonSelectOption value="high">Alta</IonSelectOption>
-            <IonSelectOption value="medium">Media</IonSelectOption>
-            <IonSelectOption value="low">Baja</IonSelectOption>
-          </IonSelect>
+            <label htmlFor="description">Descripción</label>
+            <IonTextarea id="description" placeholder="Ingrese su correo" className="input-field" />
 
-          <IonButton expand="block" className="continue-register-button btn_primary_custom">Guardar</IonButton>
+            <label htmlFor="date">Fecha</label>
+            <IonInput type="date" id="date" placeholder="Ingrese su correo" />
+
+            <label htmlFor="priority">Prioridad</label>
+            <IonSelect label="Selecciona una prioridad" placeholder="Prioridad">
+              <IonSelectOption value="high">Alta</IonSelectOption>
+              <IonSelectOption value="medium">Media</IonSelectOption>
+              <IonSelectOption value="low">Baja</IonSelectOption>
+            </IonSelect>
+
+            <IonButton expand="block" onClick={handleSave} className="continue-register-button btn_primary_custom">Guardar</IonButton>
+          </div>
         </div>
-      </div>
-    </IonContent>
-  </IonPage>
-);
+      </IonContent>
+    </IonPage>
+  );
+}
 
 export default NewTask;
