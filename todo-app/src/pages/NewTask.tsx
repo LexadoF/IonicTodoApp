@@ -1,5 +1,5 @@
 import React from 'react';
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonMenuButton, IonButton, IonCheckbox, IonInput, IonText, IonTextarea } from '@ionic/react';
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonMenuButton, IonButton, IonInput, IonTextarea, IonSelect, IonSelectOption } from '@ionic/react';
 
 const NewTask: React.FC = () => (
   <IonPage>
@@ -25,9 +25,11 @@ const NewTask: React.FC = () => (
           <IonInput type="date" id="date" placeholder="Ingrese su correo" />
 
           <label htmlFor="priority">Prioridad</label>
-          <div className="password-field">
-            <IonInput type="password" id="priority" placeholder="Prioridad" className="input-field" />
-          </div>
+          <IonSelect label="Selecciona una prioridad" placeholder="Prioridad">
+            <IonSelectOption value="high">Alta</IonSelectOption>
+            <IonSelectOption value="medium">Media</IonSelectOption>
+            <IonSelectOption value="low">Baja</IonSelectOption>
+          </IonSelect>
 
           <IonButton expand="block" className="continue-register-button btn_primary_custom">Guardar</IonButton>
         </div>

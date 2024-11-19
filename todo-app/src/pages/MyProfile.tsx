@@ -1,5 +1,5 @@
 import React from 'react';
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonMenuButton, IonButton, IonInput, IonText, IonAvatar } from '@ionic/react';
+import { IonPage, IonHeader, IonToolbar, IonContent, IonButtons, IonMenuButton, IonButton, IonInput, IonAvatar } from '@ionic/react';
 import jsonData from '../data.json';
 
 const MyProfile: React.FC = () => {

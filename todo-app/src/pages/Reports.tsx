@@ -1,22 +1,5 @@
 import React, { useState } from 'react';
-import {
-  IonPage,
-  IonHeader,
-  IonToolbar,
-  IonContent,
-  IonButtons,
-  IonMenuButton,
-  IonButton,
-  IonGrid,
-  IonRow,
-  IonCol,
-  IonDatetime,
-  IonText,
-  IonTitle,
-  IonInput,
-  IonModal,
-  IonIcon
-} from '@ionic/react';
+import { IonPage, IonHeader, IonToolbar, IonContent, IonButtons, IonMenuButton, IonButton, IonGrid, IonRow, IonCol, IonDatetime, IonText, IonTitle, IonInput, IonModal, IonIcon } from '@ionic/react';
 import { calendarOutline } from 'ionicons/icons';
 
 import './reports.css';
