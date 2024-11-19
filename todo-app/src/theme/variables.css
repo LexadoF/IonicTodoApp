@@ -19,3 +19,9 @@ http://ionicframework.com/docs/theming/ */
     --background-activated: darkorange;
     color: white;
 }
+
+.span-link{
+    color: #ff5a5f;
+    font-weight: bold;
+    cursor: pointer;
+}

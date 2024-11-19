@@ -25,8 +25,6 @@ interface AppPage {
 }
 
 const appPages: AppPage[] = [
-  { title: 'Login', url: '/login', iosIcon: logInOutline, mdIcon: logInOutline },
-  { title: 'Create Account', url: '/create-account', iosIcon: personAddOutline, mdIcon: personAddOutline },
   { title: 'My Profile', url: '/profile', iosIcon: personOutline, mdIcon: personOutline },
   { title: 'Reports', url: '/reports', iosIcon: statsChartOutline, mdIcon: statsChartOutline },
   { title: 'Tasks', url: '/tasks', iosIcon: listOutline, mdIcon: listOutline },
