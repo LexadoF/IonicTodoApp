@@ -59,7 +59,12 @@ label {
     font-size: 14px;
 }
 
-.register-link span {
+/* .register-link span {
+    color: #ff5a5f;
+    font-weight: bold;
+    cursor: pointer;
+} */
+.span-link{
     color: #ff5a5f;
     font-weight: bold;
     cursor: pointer;
