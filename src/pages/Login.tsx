@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { IonPage, IonContent, IonInput, IonButton, IonText, useIonAlert } from '@ionic/react';
 import { useHistory } from 'react-router';
 import './login.css';
+import data from '../data.json';
 
 const Login: React.FC = () => {
   const history = useHistory();
@@ -22,6 +23,18 @@ const Login: React.FC = () => {
       });
       return;
     }
+
+    const user = data.users.find((user) => user.email === email.trim() && user.password === password);
+
+    if (!user) {
+      presentAlert({
+        header: 'Error',
+        message: 'Credenciales inválidas. Por favor, intente nuevamente.',
+        buttons: ['OK'],
+      });
+      return;
+    }
+
     history.push('/profile');
   };
 
