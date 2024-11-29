@@ -6,6 +6,13 @@
       "email": "johana@company.com",
       "password": "password123",
       "picture": "https://picsum.photos/200"
+    },
+    {
+      "id": 1,
+      "username": "jhon Doe",
+      "email": "jhon@company.com",
+      "password": "password321",
+      "picture": "https://picsum.photos/200"
     }
   ],
   "tasks": [
