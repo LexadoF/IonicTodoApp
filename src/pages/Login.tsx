@@ -1,18 +1,30 @@
-import React from 'react';
-import { IonPage, IonContent, IonInput, IonButton, IonText } from '@ionic/react';
+import React, { useState } from 'react';
+import { IonPage, IonContent, IonInput, IonButton, IonText, useIonAlert } from '@ionic/react';
 import { useHistory } from 'react-router';
 import './login.css';
 
 const Login: React.FC = () => {
   const history = useHistory();
+  const [presentAlert] = useIonAlert();
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
 
   const handleRegister = () => {
-      history.push('/create-account');
+    history.push('/create-account');
   };
 
   const handleLogin = () => {
+    if (!email.trim() || !password.trim()) {
+      presentAlert({
+        header: 'Error',
+        message: 'Por favor complete todos los campos.',
+        buttons: ['OK'],
+      });
+      return;
+    }
     history.push('/profile');
-};
+  };
+
   return (
     <IonPage>
       <IonContent className="login-container">
@@ -23,11 +35,11 @@ const Login: React.FC = () => {
             <p className="paragraph-sub">Muy buenos días =)</p>
 
             <label htmlFor="email">Correo</label>
-            <IonInput type="email" id="email" placeholder="ejemplo@email.com" className="input-field" />
+            <IonInput type="email" id="email" value={email} onIonChange={(e) => setEmail(e.detail.value as string)} placeholder="ejemplo@email.com" className="input-field" />
 
             <label htmlFor="password">Contraseña</label>
             <div className="password-field">
-              <IonInput type="password" id="password" placeholder="********" className="input-field" />
+              <IonInput type="password" id="password" value={password} onIonChange={(e) => setPassword(e.detail.value as string)} placeholder="********" className="input-field" />
               {/* <IonButton fill="clear" className="eye-button">👁️</IonButton> */}
             </div>
 
