@@ -47,9 +47,20 @@
       "completed": false
     }
   ],
-  "settings": {
-    "allow_notifications": true,
-    "notification_type": "Silent",
-    "sync_between_devices": false
-  }
+  "settings": [
+    {
+      "id": 1,
+      "allow_notifications": true,
+      "notification_type": "Silent",
+      "sync_between_devices": false,
+      "user_id": 1
+    },
+    {
+      "id": 2,
+      "allow_notifications": true,
+      "notification_type": "Silent",
+      "sync_between_devices": false,
+      "user_id": 2
+    }
+  ]
 }
