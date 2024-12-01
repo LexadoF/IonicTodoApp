@@ -89,7 +89,10 @@ const NewTask: React.FC = () => {
             });
 
             setTasks(updatedTasks);
-
+            setTitle('');
+            setDesc('');
+            setDate('');
+            setPriority('');
             presentAlert({
                 header: 'Éxito',
                 message: 'Tarea creada exitosamente.',
