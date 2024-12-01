@@ -27,10 +27,12 @@ const NewTask: React.FC = () => {
       <IonContent>
         <div className="page-wrapper">
           <div className="page-form">
-            <IonButton fill="clear" className="back-arrow" onClick={navigateToTasks}>
-              <IonIcon icon={arrowBack} slot="icon-only" />
-            </IonButton>
-            <h2>Nueva tarea</h2>
+            <div className="header-divisor" style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+              <IonButton fill="clear" className="back-arrow" onClick={navigateToTasks}>
+                <IonIcon icon={arrowBack} slot="icon-only" />
+              </IonButton>
+              <h2>Nueva tarea</h2>
+            </div>
             <label htmlFor="title">Titulo</label>
             <IonInput type="text" id="title" placeholder="Titulo" className="input-field" />
 
