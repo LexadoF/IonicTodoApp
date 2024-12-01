@@ -38,7 +38,7 @@ const Menu: React.FC = () => {
     const location = useLocation();
     const [users, setUsers] = useState<any[]>([]);
     const [currentUser, setCurrentUser] = useState<any | null>(null);
-    
+
     const getLoggedInUserId = async () => {
         try {
             const { value } = await Preferences.get({ key: 'loggedInUserId' });
@@ -93,13 +93,17 @@ const Menu: React.FC = () => {
         <IonMenu contentId="main" type="overlay">
             <IonContent>
                 <IonList id="menu-list">
-                    <IonListHeader>
-                        <IonAvatar>
-                            <img src={userData?.picture} alt="User Avatar" />
-                        </IonAvatar>
-                        <div>{userData?.username || 'Loading...'}</div>
-                    </IonListHeader>
-                    <IonNote>{userData?.email || 'Loading...'}</IonNote>
+                    <div className="menu-header" style={{display: 'flex', flexDirection: 'column'}}>
+                        <IonListHeader>
+                            <div className="menu-part1" style={{display: 'flex', flexDirection: 'column'}}>
+                            <IonAvatar>
+                                <img src={userData?.picture} alt="User Avatar" />
+                            </IonAvatar>
+                            <div>{userData?.username || ''}</div>
+                            </div>
+                        </IonListHeader>
+                        <IonNote>{userData?.email || 'Loading...'}</IonNote>
+                    </div>
                     {appPages.map((appPage, index) => (
                         <IonMenuToggle key={index} autoHide={false}>
                             <IonItem
