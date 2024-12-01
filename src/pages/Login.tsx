@@ -4,6 +4,7 @@ import { useHistory } from 'react-router';
 import './login.css';
 import data from '../data.json';
 import { Filesystem, Directory, Encoding } from '@capacitor/filesystem';
+import { Preferences } from '@capacitor/preferences';
 const FILE_NAME = 'data.json';
 
 const Login: React.FC = () => {
@@ -30,12 +31,11 @@ const Login: React.FC = () => {
 
         loadUsers();
     }, []);
-    
     const handleRegister = () => {
         history.push('/create-account');
     };
 
-    const handleLogin = () => {
+    const handleLogin = async () => {
         if (!email.trim() || !password.trim()) {
             presentAlert({
                 header: 'Error',
@@ -65,6 +65,11 @@ const Login: React.FC = () => {
             });
             return;
         }
+
+        await Preferences.set({
+            key: 'loggedInUserId',
+            value: String(user.id),
+        });
 
         history.push('/profile');
     };
