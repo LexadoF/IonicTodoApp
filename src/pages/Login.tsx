@@ -1,15 +1,36 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { IonPage, IonContent, IonInput, IonButton, IonText, useIonAlert } from '@ionic/react';
 import { useHistory } from 'react-router';
 import './login.css';
 import data from '../data.json';
+import { Filesystem, Directory, Encoding } from '@capacitor/filesystem';
+const FILE_NAME = 'data.json';
 
 const Login: React.FC = () => {
     const history = useHistory();
     const [presentAlert] = useIonAlert();
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
+    const [users, setUsers] = useState<any[]>([]);
 
+    useEffect(() => {
+        const loadUsers = async () => {
+            try {
+                const file = await Filesystem.readFile({
+                    path: FILE_NAME,
+                    directory: Directory.Documents,
+                    encoding: Encoding.UTF8,
+                });
+                setUsers(JSON.parse(file.data as string).users || []);
+            } catch (error) {
+                console.error('Error reading file:', error);
+                setUsers([]);
+            }
+        };
+
+        loadUsers();
+    }, []);
+    
     const handleRegister = () => {
         history.push('/create-account');
     };
@@ -24,7 +45,17 @@ const Login: React.FC = () => {
             return;
         }
 
-        const user = data.users.find((user) => user.email === email.trim() && user.password === password);
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email.trim())) {
+            presentAlert({
+                header: 'Error',
+                message: 'Por favor ingrese un correo válido.',
+                buttons: ['OK'],
+            });
+            return;
+        }
+
+        const user = users.find((user) => user.email === email.trim() && user.password === password);
 
         if (!user) {
             presentAlert({
